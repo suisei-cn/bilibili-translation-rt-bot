@@ -65,7 +65,7 @@ const dateNow = Number(new Date());
     }
   });
 
-  for (const item of potentialRt.slice(0, 1)) {
+  for (const item of potentialRt) {
     let pubTime = new Date(item.isoDate);
     if (pubTime < config.since) {
       console.log("Message too old. Stopping.");
