@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "rss-parser": "^3.7.6"
+  },
+  "name": "bilibili-translation-rt-bot",
+  "version": "0.1.0",
+  "description": "Detect tweet translations and RT them to Telegram.",
+  "main": "main.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suisei-cn/bilibili-translation-rt-bot.git"
+  },
+  "keywords": [
+    "rss",
+    "telegram"
+  ],
+  "author": "Outvi V <git+npm@outv.im>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/suisei-cn/bilibili-translation-rt-bot/issues"
+  },
+  "homepage": "https://github.com/suisei-cn/bilibili-translation-rt-bot#readme"
+}
