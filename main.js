@@ -100,7 +100,7 @@ async function getOCRTextFromImgUrl(url) {
       `https://api.telegram.org/bot${config.BOT_KEY}/sendMessage`,
       {
         chat_id: config.CHAT_ID,
-        text: `[\u200b](${item.imgurl})\n[B博原文](${item.url})`,
+        text: `${config.TELEGRAM_MESSAGE_TAG || ""}[\u200b](${item.imgurl})\n[B博原文](${item.url})`,
         parse_mode: "markdown"
       }
     );

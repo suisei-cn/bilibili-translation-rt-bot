@@ -3,5 +3,6 @@
   "BOT_KEY": "BOT_KEY",
   "CHAT_ID": "CHAT_ID",
   "BILIBILI_UID": 9034870,
-  "TWITTER_HANDLE": "@suisei_hosimati"
+  "TWITTER_HANDLE": "@suisei_hosimati",
+  "TELEGRAM_MESSAGE_TAG": "#星姐推文翻译"
 }
