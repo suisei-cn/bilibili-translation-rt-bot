@@ -5,6 +5,12 @@ const axios = require("axios");
 const config = require("./config.json");
 const fs = require("fs");
 
+function pre_job() {
+  console.log("------------------------");
+  console.log(`Current time:${new Date().toLocaleString()}`);
+  console.log("------------------------");
+}
+
 function saveDateNow(time) {
   let timeNum = Number(time);
   fs.writeFileSync(
@@ -44,6 +50,7 @@ async function getOCRTextFromImgUrl(url) {
 }
 
 (async () => {
+  pre_job();
   if (!config.since) {
     saveDateNow(new Date());
     console.log("Recording start time only. Next run will start to publish.");
