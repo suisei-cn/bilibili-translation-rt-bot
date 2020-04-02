@@ -5,12 +5,13 @@ const axios = require("axios");
 const config = require("./config.json");
 const fs = require("fs");
 
-function saveDateNow() {
+function saveDateNow(time) {
+  let timeNum = Number(time);
   fs.writeFileSync(
     "./config.json",
     JSON.stringify(
       Object.assign(config, {
-        since: dateNow
+        since: timeNum
       })
     )
   );
@@ -29,7 +30,9 @@ async function getOCRTextFromImgUrl(url) {
       `https://api.ocr.space/parse/imageurl?apikey=${config.OCR_SPACE_KEY}&url=${url}`
     );
     console.log("tz", resp.data);
-    return resp.data.ParsedResults[0].ParsedText.includes(config.TWITTER_HANDLE);
+    return resp.data.ParsedResults[0].ParsedText.includes(
+      config.TWITTER_HANDLE
+    );
   } catch (error) {
     console.error(`OCR API Error: ${error}`);
     if (String(error).includes("socket")) {
@@ -40,11 +43,9 @@ async function getOCRTextFromImgUrl(url) {
   return 0;
 }
 
-const dateNow = Number(new Date());
-
 (async () => {
   if (!config.since) {
-    saveDateNow();
+    saveDateNow(new Date());
     console.log("Recording start time only. Next run will start to publish.");
     return;
   }
@@ -56,6 +57,7 @@ const dateNow = Number(new Date());
 
   let potentialRt = [];
   let pubQueue = [];
+  let firstPubTime = 0;
 
   feed.items.forEach(item => {
     if (item.title.includes("分享图片")) {
@@ -67,7 +69,8 @@ const dateNow = Number(new Date());
 
   for (const item of potentialRt) {
     let pubTime = new Date(item.isoDate);
-    if (pubTime < config.since) {
+    if (firstPubTime < pubTime) firstPubTime = pubTime;
+    if (pubTime <= config.since) {
       console.log("Message too old. Stopping.");
       break;
     }
@@ -96,5 +99,5 @@ const dateNow = Number(new Date());
     );
   }
 
-  saveDateNow();
+  saveDateNow(firstPubTime);
 })();
