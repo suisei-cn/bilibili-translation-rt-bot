@@ -82,7 +82,7 @@ async function getOCRTextFromImgUrl(url) {
       break;
     }
     let imgUrls = extractUrlFromText(item.content || []);
-    for (const img of imgUrls) {
+    for (const img of imgUrls.reverse()) {
       console.log(`Searching ${img}`);
       let pub = await getOCRTextFromImgUrl(img);
       pub === -1 && process.exit(0);
