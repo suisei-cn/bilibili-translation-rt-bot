@@ -1,6 +1,9 @@
 # bilibili-translation-rt-bot
 
-Note: This is only a proof of concept. It's obviously not using the best approach of detection but it works :)
+It fetch from Bilibili API for recent images, try to determine if it's a Twitter translation using the following methods:
+
+1. If the image is generated with @cn-matsuri's [translation UI](https://github.com/cn-matsuri/matsuri_translation), we read the tEXt information and find the Twitter link.
+2. If we can't find a valid tEXt information from @cn-matsuri, we use OCR.space's OCR to find if the Twitter handle is present. In this case, we don't have the Twitter link.
 
 ## Usage
 
@@ -15,4 +18,4 @@ OCR.Space API is slow and only recognizes English. If condition permits, using A
 
 ## Thanks
 
-A big shout out for [RSSHub](https://github.com/DIYgod/RSSHub) and [OCR.space](https://ocr.space/).
+A big shout out for [RSSHub](https://github.com/DIYgod/RSSHub) (for [v0.1.0](https://github.com/suisei-cn/bilibili-translation-rt-bot/tree/v0.1.0)), [@cn-matsuri](https://github.com/cn-matsuri) and [OCR.space](https://ocr.space/).
