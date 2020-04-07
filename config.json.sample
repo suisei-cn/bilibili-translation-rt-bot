@@ -2,6 +2,7 @@
   "OCR_SPACE_KEY": "OCR_SPACE_KEY",
   "BOT_KEY": "BOT_KEY",
   "CHAT_ID": "CHAT_ID",
+  "USE_OCR": false,
   "BILIBILI_UID": 9034870,
   "TWITTER_HANDLE": "@suisei_hosimati",
   "TELEGRAM_MESSAGE_TAG": "#星姐推文翻译"
