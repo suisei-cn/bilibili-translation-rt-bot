@@ -148,5 +148,5 @@ async function getOCRTextFromImgUrl(url) {
     );
   }
 
-  saveDateNow(firstPubTime);
+  if (firstPubTime !== 0) saveDateNow(firstPubTime);
 })();
