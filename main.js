@@ -113,7 +113,7 @@ async function getOCRTextFromImgUrl(url) {
 
       if (theDate == 0) {
         console.warn("Bad timestamp for post:", item);
-      } else if (theDate < config.since) {
+      } else if (theDate <= config.since) {
         breakNow = true;
         break;
       }

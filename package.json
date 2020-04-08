@@ -3,7 +3,7 @@
     "axios": "^0.19.2"
   },
   "name": "bilibili-translation-rt-bot",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Detect tweet translations and RT them to Telegram.",
   "main": "main.js",
   "devDependencies": {},
