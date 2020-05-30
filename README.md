@@ -1,3 +1,7 @@
+This project is not used by myself, and is thus not actively developed. Contributions on bug fixes are still accepted.
+
+---
+
 # bilibili-translation-rt-bot
 
 It fetch from Bilibili API for recent images, try to determine if it's a Twitter translation using the following methods:
